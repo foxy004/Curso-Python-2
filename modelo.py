@@ -1,14 +1,11 @@
 from mailbox import NotEmptyError
 
 
-class Playlist:
+class Playlist(list):
 
     def __init__(self, nome, programas) -> None:
         self.nome = nome
-        self.programas = programas
-
-    def tamanho(self):
-        return len(self.programas)
+        super().__init__(programas)
 
 class Programa:
     def __init__(self, nome, ano):
