@@ -70,11 +70,11 @@ suits.dar_like()
 
 
 
-lista_programas = [vingadores, suits]
+lista_programas = [vingadores, suits, demolidor, tmep]
 
 playlist_fim_de_semana = Playlist('Fim de semana', lista_programas)
-
-for programa in playlist_fim_de_semana.programas:
+print(f'Tamanho da playlist: {len(playlist_fim_de_semana)}')
+for programa in playlist_fim_de_semana:
     print(programa)
 
 
