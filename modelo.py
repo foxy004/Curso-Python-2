@@ -13,7 +13,7 @@ class Programa:
         self.ano = ano
         self.__likes = 0
 
-    def dar_likes(self):
+    def dar_like(self):
         self.__likes += 1
 
     @property
