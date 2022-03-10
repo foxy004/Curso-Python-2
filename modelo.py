@@ -1,3 +1,15 @@
+from mailbox import NotEmptyError
+
+
+class Playlist:
+
+    def __init__(self, nome, programas) -> None:
+        self.nome = nome
+        self.programas = programas
+
+    def tamanho(self):
+        return len(self.programas)
+
 class Programa:
     def __init__(self, nome, ano):
         self.__nome = nome.title()
@@ -32,11 +44,6 @@ class Filme(Programa):
         return(f'{self.nome} - {self.ano} - {self.duracao} minutos : {self.likes} likes.')
 
 
-vingadores = Filme('Vingadores guerra infinita', 2018, 160)
-vingadores.dar_likes()
-#print(f'{vingadores.nome} - {vingadores.ano} - {vingadores.duracao} : {vingadores.likes}')
-
-
 
 class Serie(Programa):
     def __init__(self,nome, ano, temporadas):
@@ -46,14 +53,31 @@ class Serie(Programa):
     def __str__(self):
        return (f'{self.nome} - {self.ano} - {self.temporadas} temporadas: {self.likes} likes.')
 
+
+tmep = Filme('Todo mundo em pânico', 1999, 100)
+demolidor = Serie('Demolidor', 2016, 2)
+vingadores = Filme('Vingadores guerra infinita', 2018, 160)
 suits = Serie('suits', 2018, 2)
-suits.dar_likes()
-suits.dar_likes()
-#print(f'{suits.nome} - {suits.ano} - {suits.temporadas} : {suits.likes}')
+
+vingadores.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
+suits.dar_like()
+suits.dar_like()
+suits.dar_like()
+
+
+
 
 lista_programas = [vingadores, suits]
 
-for programa in lista_programas:
+playlist_fim_de_semana = Playlist('Fim de semana', lista_programas)
+
+for programa in playlist_fim_de_semana.programas:
     print(programa)
 
 
