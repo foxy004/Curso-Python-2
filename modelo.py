@@ -9,6 +9,12 @@ class Playlist:
 
     def __getitem__(self, item):
         return self._programas[item]
+    
+    def __len__(self):
+        return len(self._programas)
+
+    def __sum__(self, obj):
+        self._programas.append(obj)
 
     @property
     def listagem(self):
@@ -81,10 +87,11 @@ suits.dar_like()
 
 
 
-lista_programas = [vingadores, suits, demolidor, tmep]
+lista_programas = [vingadores, suits, tmep]
+lista_programas + demolidor
 
 playlist_fim_de_semana = Playlist('Fim de semana', lista_programas)
-print(f'Tamanho da playlist: {len(playlist_fim_de_semana)}')
+print(f'Tamanho da playlist: {playlist_fim_de_semana}')
 for programa in playlist_fim_de_semana:
     print(programa)
 
