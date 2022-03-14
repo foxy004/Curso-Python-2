@@ -1,5 +1,3 @@
-from mailbox import NotEmptyError
-
 
 class Playlist:
 
@@ -12,9 +10,6 @@ class Playlist:
     
     def __len__(self):
         return len(self._programas)
-
-    def __sum__(self, obj):
-        self._programas.append(obj)
 
     @property
     def listagem(self):
@@ -87,8 +82,7 @@ suits.dar_like()
 
 
 
-lista_programas = [vingadores, suits, tmep]
-lista_programas + demolidor
+lista_programas = [vingadores, suits, demolidor, tmep]
 
 playlist_fim_de_semana = Playlist('Fim de semana', lista_programas)
 print(f'Tamanho da playlist: {playlist_fim_de_semana}')
